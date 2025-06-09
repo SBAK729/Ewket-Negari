@@ -118,4 +118,49 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   renderCarousel();
+
+  // FAQs Accordion logic
+  const accordianCards = document.querySelectorAll(".questions-card");
+
+  accordianCards.forEach((card) => {
+    const question = card.querySelector(".question");
+    const answer = card.querySelector(".answer");
+    const iconPath = card.querySelector("svg path");
+
+    // Hide answers initially
+    if (answer) answer.style.display = "none";
+
+    // Click listener on the entire question block, including text and icon
+    question.addEventListener("click", () => {
+      const isActive = card.classList.contains("active");
+
+      // Close all cards
+      accordianCards.forEach((card) => {
+        card.classList.remove("active");
+        const answer = card.querySelector(".answer");
+        const path = card.querySelector("svg path");
+        if (answer) answer.style.display = "none";
+        if (path) {
+          // Down arrow
+          path.setAttribute(
+            "d",
+            "M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
+          );
+        }
+      });
+
+      // Toggle this card
+      if (!isActive) {
+        card.classList.add("active");
+        if (answer) answer.style.display = "block";
+        if (iconPath) {
+          // Up arrow
+          iconPath.setAttribute(
+            "d",
+            "M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"
+          );
+        }
+      }
+    });
+  });
 });
