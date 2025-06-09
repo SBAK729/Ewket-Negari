@@ -242,4 +242,17 @@ Be friendly, clear, and helpful in your answers. Respond to greetings like "hell
   userInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") sendBtn.click();
   });
+
+  // Implement how many times the site visited
+  let count = localStorage.getItem("visitCount");
+
+  if (!count) {
+    count = 0;
+  }
+
+  count = parseInt(count) + 1;
+
+  localStorage.setItem("visitCount", count);
+
+  document.getElementById("visit-count").textContent = count;
 });
