@@ -275,14 +275,377 @@
         </div>
       </section>
       <section class="service-section">
-        <h2>Services</h2>
-        <hr />
+        <div class="devide">
+          <h2>Services</h2>
+          <hr />
+        </div>
+
         <h3>Our Organizational Services</h3>
-        <div class="cards-container">
-          <div class="service-card"></div>
+        <div class="container">
+          <span class="left" id="previous"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 12h14M5 12l6 6m-6-6l6-6"
+              /></svg
+          ></span>
+          <div class="cards-container" id="carousel"></div>
+          <span class="right" id="next"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 12h14m-7-7l7 7l-7 7"
+              /></svg
+          ></span>
+        </div>
+      </section>
+      <section class="features-section">
+        <div class="features-content">
+          <h3>Learn, Prepare for Exam and Pass.</h3>
+          <div class="feature">
+            <span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0M3 6v13m9-13v13m9-13v13"
+                /></svg
+            ></span>
+            <p> Interactive Course Content</p>
+          </div>
+          <div class="feature">
+            <span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <g
+                  fill="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  color="currentColor"
+                >
+                  <path
+                    d="M12 23.063c-5.93 0-10.75-4.82-10.75-10.75S6.07 1.563 12 1.563s10.75 4.82 10.75 10.75s-4.82 10.75-10.75 10.75m0-20c-5.1 0-9.25 4.15-9.25 9.25s4.15 9.25 9.25 9.25s9.25-4.15 9.25-9.25s-4.15-9.25-9.25-9.25"
+                  />
+                  <path
+                    d="M19.5 12.313a7.46 7.46 0 0 0-2.2-5.3a7.46 7.46 0 0 0-5.3-2.2v7.5z"
+                  />
+                </g></svg
+            ></span>
+            <p> Personalized Progress Tracking</p>
+          </div>
+          <div class="feature">
+            <span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="256"
+                height="256"
+                viewBox="0 0 256 256"
+              >
+                <path
+                  fill="currentColor"
+                  d="M216 40H40a16 16 0 0 0-16 16v160a8 8 0 0 0 11.58 7.16L64 208.94l28.42 14.22a8 8 0 0 0 7.16 0L128 208.94l28.42 14.22a8 8 0 0 0 7.16 0L192 208.94l28.42 14.22A8 8 0 0 0 232 216V56a16 16 0 0 0-16-16m0 163.06l-20.42-10.22a8 8 0 0 0-7.16 0L160 207.06l-28.42-14.22a8 8 0 0 0-7.16 0L96 207.06l-28.42-14.22a8 8 0 0 0-7.16 0L40 203.06V56h176Zm-155.58-35.9a8 8 0 0 0 10.74-3.58L76.94 152h38.12l5.78 11.58a8 8 0 1 0 14.32-7.16l-32-64a8 8 0 0 0-14.32 0l-32 64a8 8 0 0 0 3.58 10.74M96 113.89L107.06 136H84.94ZM136 128a8 8 0 0 1 8-8h16v-16a8 8 0 0 1 16 0v16h16a8 8 0 0 1 0 16h-16v16a8 8 0 0 1-16 0v-16h-16a8 8 0 0 1-8-8"
+                /></svg
+            ></span>
+            <p> Exam-Focused Practice</p>
+          </div>
+          <button class="learn-more">
+            Learn More
+            <span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M13 16.25a.74.74 0 0 1-.53-.22a.75.75 0 0 1 0-1.06l3-3l-3-3A.75.75 0 0 1 13.53 8l3.5 3.5a.75.75 0 0 1 0 1.06L13.53 16a.74.74 0 0 1-.53.25m-5.5 0A.74.74 0 0 1 7 16a.75.75 0 0 1 0-1l3-3l-3-3a.75.75 0 0 1 1-1l3.5 3.5a.75.75 0 0 1 0 1.06L8 16a.74.74 0 0 1-.5.25"
+                /></svg
+            ></span>
+          </button>
+        </div>
+        <div class="features-image">
+          <img src="asset/image/learn.jpeg" alt="" />
+        </div>
+      </section>
+      <section class="testimonial-section">
+        <div class="devide">
+          <h2>Testimonials</h2>
+          <hr class="longer" />
+        </div>
+        <div class="testimonial-container">
+          <div class="testimonial-card">
+            <div class="user-profile">
+              <img src="asset/image/nati.jpg" alt="" />
+              <div class="profile">
+                <h3>Nathnael Meseret</h3>
+                <p>High School Teacher & National Exam Marker</p>
+              </div>
+            </div>
+            <div class="user-quotes">
+              <p>
+                “This platform fills a major gap in our education system by
+                aligning digital content with the national curriculum. It’s a
+                game changer for exam preparation.”
+              </p>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="user-profile">
+              <img src="asset/image/sena.jpg" alt="" />
+              <div class="profile">
+                <h3>Sena Kebede</h3>
+                <p>Education Specialist</p>
+              </div>
+            </div>
+            <div class="user-quotes">
+              <p>
+                “As an education consultant, I’ve seen many platforms—but this
+                one stands out for its localized content, student-friendly
+                design, and focus on learning outcomes.”
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="brand-section">
+        <div class="brand-container">
+          <div class="cards">Focused</div>
+          <div class="cards">Accessible</div>
+          <div class="cards">Student-Centered</div>
+        </div>
+      </section>
+      <section class="team-section">
+        <h2>Our Teams</h2>
+        <div class="team-container">
+          <div class="team-card">
+            <div class="image">
+              <img src="asset/image/sintayehu.jpg" alt="" />
+            </div>
+
+            <h3>Sintayehu Bikila</h3>
+            <p>CEO, Co-Founder</p>
+          </div>
+          <div class="team-card">
+            <div class="image">
+              <img src="asset/image/sena.jpg" alt="" />
+            </div>
+
+            <h3>Sena Kebede</h3>
+            <p>CTO, Co-Founder</p>
+          </div>
+          <div class="team-card">
+            <div class="image">
+              <img src="asset/image/reem.jpg" alt="" />
+            </div>
+
+            <h3>Reem Abdella</h3>
+            <p>CFO, Product Designer</p>
+          </div>
+        </div>
+      </section>
+      <section class="chatbot-section"></section>
+      <section class="cantact-section">
+        <div class="message-container">
+          <h2>Message Us</h2>
+          <div class="inputes">
+            <input type="text" placeholder="Your Name" />
+            <input type="text" placeholder="Your Phone" />
+            <input type="email" placeholder="Email" />
+            <input type="text" placeholder="Subject" />
+          </div>
+          <input type="text" class="text-area" placeholder="Messages" />
+          <button>Send Message</button>
         </div>
       </section>
     </main>
+    <footer>
+      <dev class="footer-container">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <img src="asset/image/logo.png" alt="" />
+            <h3>Ewket Negari</h3>
+          </div>
+          <p>
+            <span>Ewket Negari</span> platform offers courses, exam preparation
+            tools, and progress tracking tailored to the Ethiopian curriculum.
+          </p>
+        </div>
+        <div class="footer-elements">
+          <h2 class="footer-heading">Services</h2>
+          <p class="footer-text">Course Delivery Platform</p>
+          <p class="footer-text">National Exam Preparation</p>
+          <p class="footer-text">Student Progress Tracker</p>
+        </div>
+        <div class="footer-elements">
+          <h2 class="footer-heading">Support</h2>
+          <p class="footer-text">Help</p>
+          <p class="footer-text">FAQS</p>
+          <p class="footer-text">Contact Us</p>
+          <p class="footer-text">Privacy Policy</p>
+        </div>
+        <div class="footer-elements">
+          <h2 class="footer-heading">Contact info</h2>
+          <p class="footer-text">
+            <span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M11.262 22.134S4 16.018 4 10a8 8 0 1 1 16 0c0 6.018-7.262 12.134-7.262 12.134c-.404.372-1.069.368-1.476 0M12 13.5a3.5 3.5 0 1 0 0-7a3.5 3.5 0 0 0 0 7"
+                /></svg
+            ></span>
+            Addis Abeba, Ethiopia
+          </p>
+          <p class="footer-text">
+            <span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M3 4h18a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1m16.031 1.914l-6.875 5.5a.25.25 0 0 1-.312 0l-6.875-5.5l-.938 1.172l6.876 5.5a1.75 1.75 0 0 0 2.186 0l6.876-5.5z"
+                /></svg></span
+            >contact@ewketnegari.com
+          </p>
+          <p class="footer-text">
+            <span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M9.366 10.682a10.56 10.56 0 0 0 3.952 3.952l.884-1.238a1 1 0 0 1 1.294-.296a11.4 11.4 0 0 0 4.583 1.364a1 1 0 0 1 .921.997v4.462a1 1 0 0 1-.898.995Q19.307 21 18.5 21C9.94 21 3 14.06 3 5.5q0-.807.082-1.602A1 1 0 0 1 4.077 3h4.462a1 1 0 0 1 .997.921A11.4 11.4 0 0 0 10.9 8.504a1 1 0 0 1-.296 1.294zm-2.522-.657l1.9-1.357A13.4 13.4 0 0 1 7.647 5H5.01Q5 5.25 5 5.5C5 12.956 11.044 19 18.5 19q.25 0 .5-.01v-2.637a13.4 13.4 0 0 1-3.668-1.097l-1.357 1.9a12.5 12.5 0 0 1-1.588-.75l-.058-.033a12.56 12.56 0 0 1-4.702-4.702l-.033-.058a12.4 12.4 0 0 1-.75-1.588"
+                /></svg></span
+            >+251912033567
+          </p>
+          <div class="social-media-links">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"
+                />
+              </svg>
+            </span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M5 1.25a2.75 2.75 0 1 0 0 5.5a2.75 2.75 0 0 0 0-5.5M3.75 4a1.25 1.25 0 1 1 2.5 0a1.25 1.25 0 0 1-2.5 0m-1.5 4A.75.75 0 0 1 3 7.25h4a.75.75 0 0 1 .75.75v13a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75zm1.5.75v11.5h2.5V8.75zM9.25 8a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 .75.75v.434l.435-.187a7.8 7.8 0 0 1 2.358-.595C20.318 7.4 22.75 9.58 22.75 12.38V21a.75.75 0 0 1-.75.75h-4a.75.75 0 0 1-.75-.75v-7a1.25 1.25 0 0 0-2.5 0v7a.75.75 0 0 1-.75.75h-4a.75.75 0 0 1-.75-.75zm1.5.75v11.5h2.5V14a2.75 2.75 0 1 1 5.5 0v6.25h2.5v-7.87c0-1.904-1.661-3.408-3.57-3.234a6.3 6.3 0 0 0-1.904.48l-1.48.635a.75.75 0 0 1-1.046-.69V8.75z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <g fill="none" fill-rule="evenodd">
+                  <path
+                    d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"
+                  />
+                  <path
+                    fill="currentColor"
+                    d="M12 4c.855 0 1.732.022 2.582.058l1.004.048l.961.057l.9.061l.822.064a3.8 3.8 0 0 1 3.494 3.423l.04.425l.075.91c.07.943.122 1.971.122 2.954s-.052 2.011-.122 2.954l-.075.91l-.04.425a3.8 3.8 0 0 1-3.495 3.423l-.82.063l-.9.062l-.962.057l-1.004.048A62 62 0 0 1 12 20a62 62 0 0 1-2.582-.058l-1.004-.048l-.961-.057l-.9-.062l-.822-.063a3.8 3.8 0 0 1-3.494-3.423l-.04-.425l-.075-.91A41 41 0 0 1 2 12c0-.983.052-2.011.122-2.954l.075-.91l.04-.425A3.8 3.8 0 0 1 5.73 4.288l.821-.064l.9-.061l.962-.057l1.004-.048A62 62 0 0 1 12 4m-2 5.575v4.85c0 .462.5.75.9.52l4.2-2.425a.6.6 0 0 0 0-1.04l-4.2-2.424a.6.6 0 0 0-.9.52Z"
+                  />
+                </g>
+              </svg>
+            </span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <g fill="none" fill-rule="evenodd">
+                  <path
+                    d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"
+                  />
+                  <path
+                    fill="currentColor"
+                    d="M19.777 4.43a1.5 1.5 0 0 1 2.062 1.626l-2.268 13.757c-.22 1.327-1.676 2.088-2.893 1.427c-1.018-.553-2.53-1.405-3.89-2.294c-.68-.445-2.763-1.87-2.507-2.884c.22-.867 3.72-4.125 5.72-6.062c.785-.761.427-1.2-.5-.5c-2.302 1.738-5.998 4.381-7.22 5.125c-1.078.656-1.64.768-2.312.656c-1.226-.204-2.363-.52-3.291-.905c-1.254-.52-1.193-2.244-.001-2.746z"
+                  />
+                </g>
+              </svg>
+            </span>
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M16 8.245V15.5a6.5 6.5 0 1 1-5-6.326v3.163a3.5 3.5 0 1 0 2 3.163V2h3a5 5 0 0 0 5 5v3a7.97 7.97 0 0 1-5-1.755"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </dev>
+      <hr />
+      <p>Copyright &copy;2025 Ewket Negari, All right reserved.</p>
+    </footer>
 
     <script src="script/script.js"></script>
   </body>
