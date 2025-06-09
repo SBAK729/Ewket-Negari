@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuIcon = document.getElementById("menuToggle");
   const dropdownMenu = document.getElementById("dropdownMenu");
   const navigations = document.getElementById("navigations");
-  console.log(navigations);
 
   let isClicked = false;
 
@@ -162,5 +161,85 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
     });
+  });
+
+  // Implementing the chatbot
+  const chatBox = document.getElementById("chat-box");
+  const userInput = document.getElementById("user-input");
+  const sendBtn = document.getElementById("send-btn");
+
+  // Hardcoded context for the chatbot
+  const contextPrompt = `
+You are Ewket Negari’s helpful AI assistant.
+Ewket Negari is a startup founded to make education more accessible and personalized in Ethiopia.
+We provide digital courses, training programs, and a platform that connects learners with expert educators.
+Our mission is to empower students and professionals through affordable, high-quality, and context-aware education.
+The team is led by passionate educators, developers, and entrepreneurs dedicated to driving social impact through technology.
+
+We offer:
+- Online and offline courses in STEM and soft skills
+- Personalized learning paths
+- Mentorship and community events
+- Tools for schools and instructors
+
+We aim to reach underrepresented learners and become a leading education innovation hub in Africa.
+
+You can support us by:
+- Taking or sharing our courses
+- Volunteering as a mentor or instructor
+- Donating or partnering with us
+
+Be friendly, clear, and helpful in your answers. Respond to greetings like "hello", and explain who you are if someone asks "who are you?" or similar.
+`;
+
+  // Append message to chat box
+  function appendMessage(sender, message) {
+    const div = document.createElement("div");
+    div.className = "chat " + sender;
+    div.innerHTML =
+      sender === "ai"
+        ? `<span class="flag">🤖</span><strong>AI:</strong> ${message}`
+        : `<strong>👤 You:</strong> ${message}`;
+    chatBox.appendChild(div);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+
+  // Main send handler
+  sendBtn.addEventListener("click", async () => {
+    const msg = userInput.value.trim();
+    if (!msg) {
+      alert("Please enter a question.");
+      return;
+    }
+
+    appendMessage("user", msg);
+    userInput.value = "";
+
+    try {
+      const fullPrompt = `${contextPrompt}\n\nUser: ${msg}\nAI:`;
+
+      const response = await puter.ai.chat({
+        prompt: fullPrompt,
+      });
+
+      if (response && response.choices && response.choices.length > 0) {
+        const aiReply =
+          response.choices[0].text ||
+          response.choices[0].message?.content ||
+          "No response.";
+        appendMessage("ai", aiReply.trim());
+      } else {
+        appendMessage("ai", " No response from the AI.");
+        console.warn(response);
+      }
+    } catch (err) {
+      appendMessage("ai", " Error reaching the AI. Please try again later.");
+      console.error(err);
+    }
+  });
+
+  // Pressing Enter sends the message
+  userInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") sendBtn.click();
   });
 });
