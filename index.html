@@ -149,12 +149,13 @@
         </span>
         <div class="navigations" id="dropdownMenu">
           <ul>
-            <li>Home</li>
-            <li>Services</li>
-            <li>Features</li>
-            <li>About Us</li>
-            <li>Testimonials</li>
-            <li>Contacts</li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#service">Services</a></li>
+            <li><a href="#featur">Features</a></li>
+            <li><a href="#testimonial">Testimonials</a></li>
+            <li><a href="#chatbot">Chatbot</a></li>
+            <li><a href="#contact">Contacts</a></li>
           </ul>
           <button class="login">
             <span>
@@ -177,7 +178,7 @@
       </nav>
     </header>
     <main>
-      <section class="hero-section">
+      <section class="hero-section" id="home">
         <div class="left-hero">
           <h1>Prepare. Practice. Pass.</h1>
           <p>
@@ -208,7 +209,7 @@
           <p>in persuit of Services</p>
         </div>
       </section>
-      <section class="about-section">
+      <section class="about-section" id="about">
         <h2>About</h2>
 
         <div class="about-content">
@@ -274,7 +275,7 @@
           </div>
         </div>
       </section>
-      <section class="service-section">
+      <section class="service-section" id="service">
         <div class="devide">
           <h2>Services</h2>
           <hr />
@@ -317,7 +318,7 @@
           ></span>
         </div>
       </section>
-      <section class="features-section">
+      <section class="features-section" id="featur">
         <div class="features-content">
           <h3>Learn, Prepare for Exam and Pass.</h3>
           <div class="feature">
@@ -399,7 +400,7 @@
           <img src="asset/image/learn.jpeg" alt="" />
         </div>
       </section>
-      <section class="testimonial-section">
+      <section class="testimonial-section" id="testimonial">
         <div class="devide">
           <h2>Testimonials</h2>
           <hr class="longer" />
@@ -475,7 +476,54 @@
           </div>
         </div>
       </section>
-      <section class="chatbot-section"></section>
+      <section class="chatbot-section" id="chatbot">
+        <div class="chat-wrapper">
+          <div class="chat-header">AI Assistant</div>
+          <div class="chat-box" id="chat-box">
+            <div class="chat ai">
+              <span class="flag"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                >
+                  <g fill="currentColor">
+                    <path
+                      d="M13.472 26h5.056C19.34 26 20 25.326 20 24.5s-.66-1.5-1.472-1.5h-5.056C12.66 23 12 23.674 12 24.5s.66 1.5 1.472 1.5M10.5 10a4.5 4.5 0 1 0 0 9h11a4.5 4.5 0 1 0 0-9zm.75 2c.69 0 1.25.56 1.25 1.25v2.5a1.25 1.25 0 1 1-2.5 0v-2.5c0-.69.56-1.25 1.25-1.25m8.25 1.25a1.25 1.25 0 1 1 2.5 0v2.5a1.25 1.25 0 1 1-2.5 0z"
+                    />
+                    <path
+                      d="M4 4.915a1.5 1.5 0 1 0-1 0v7.355a2 2 0 0 0-1 1.728v7.004c0 .736.403 1.382 1 1.729v1.319A6.945 6.945 0 0 0 9.95 31h12.1A6.943 6.943 0 0 0 29 24.06v-1.39c.597-.347 1-.994 1-1.73v-7.01c0-.736-.403-1.383-1-1.73V5.018a1.55 1.55 0 1 0-1 0v3.396A7.02 7.02 0 0 0 21.98 5h-1.065q.084-.236.085-.5A1.5 1.5 0 0 0 19.5 3h-7a1.5 1.5 0 0 0-1.415 2H10.03C7.47 5 5.23 6.369 4 8.414zm1 7.115A5.03 5.03 0 0 1 10.03 7h11.95A5.03 5.03 0 0 1 27 12.03v12.03A4.943 4.943 0 0 1 22.05 29H9.95A4.945 4.945 0 0 1 5 24.05z"
+                    />
+                  </g></svg
+              ></span>
+              <strong>AI:</strong> Hello, I am Ewket Negari’s AI Assistant. How
+              can I help you?
+            </div>
+            <div class="chat user"><strong>👤 You:</strong> Hello?</div>
+          </div>
+          <div class="chat-input">
+            <input
+              type="text"
+              id="user-input"
+              placeholder="Ask me anything about Ewket Negari ..."
+            />
+            <button class="send-chat" id="send-btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M24.003 12L.292 1.665L3.587 11H11v2H3.587L.292 22.336z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
       <section class="faqs">
         <h2>FAQs</h2>
         <div class="questions-answer">
@@ -551,7 +599,7 @@
           <button>Contact Us</button>
         </div>
       </section>
-      <section class="cantact-section">
+      <section class="cantact-section" id="contact">
         <div class="message-container">
           <h2>Message Us</h2>
           <div class="inputes">
@@ -722,6 +770,7 @@
       <p>Copyright &copy;2025 Ewket Negari, All right reserved.</p>
     </footer>
 
+    <script src="https://js.puter.com/v2/"></script>
     <script src="script/script.js"></script>
   </body>
 </html>
