@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
       isClicked = false;
     }
   });
-
+  // Make navigation sticky top
   const stickyOffset = 100;
 
   window.addEventListener("scroll", function () {
@@ -30,4 +30,92 @@ document.addEventListener("DOMContentLoaded", function () {
       navigations.classList.remove("sticky-nav");
     }
   });
+
+  // Service cards carousel
+
+  const carousel = document.getElementById("carousel");
+  const nextBtn = document.getElementById("next");
+  const prevBtn = document.getElementById("previous");
+
+  const cards = [
+    {
+      img: "asset/image/teaching.jpg",
+      title: "Course Delivery Platform",
+      desc: "An online learning platform offering structured video lessons, notes, and quizzes aligned with the Ethiopian curriculum for grades 9'-'12. Content is delivered in simple language and local languages for better accessibility.",
+    },
+    {
+      img: "asset/image/exam-preparation.jpg",
+      title: "National Exam Preparation",
+      desc: "Focused resources to help students prepare for Grade 10 and 12 national exams, including past papers, timed mock exams, and exam tips. Helps students build confidence and improve test-taking skills.",
+    },
+    {
+      img: "asset/image/prograss-track.jpg",
+      title: "Student Progress Tracker",
+      desc: "A smart dashboard that tracks student performance, study habits, and progress over time. <br /><br /> It gives personalized feedback and study tips to help students improve where they need it most.",
+    },
+    {
+      img: "asset/image/teaching.jpg",
+      title: "Course Delivery Platform",
+      desc: "An online learning platform offering structured video lessons, notes, and quizzes aligned with the Ethiopian curriculum for grades 9'-'12. Content is delivered in simple language and local languages for better accessibility.",
+    },
+    {
+      img: "asset/image/exam-preparation.jpg",
+      title: "National Exam Preparation",
+      desc: "Focused resources to help students prepare for Grade 10 and 12 national exams, including past papers, timed mock exams, and exam tips. Helps students build confidence and improve test-taking skills.",
+    },
+    {
+      img: "asset/image/prograss-track.jpg",
+      title: "Student Progress Tracker",
+      desc: "A smart dashboard that tracks student performance, study habits, and progress over time. <br /><br /> It gives personalized feedback and study tips to help students improve where they need it most.",
+    },
+  ];
+
+  let startIndex = 0;
+
+  function getCardsPerView() {
+    return window.innerWidth >= 992 ? 3 : 1;
+  }
+
+  function renderCarousel() {
+    const cardsPerView = getCardsPerView();
+    const visibleCards = cards.slice(startIndex, startIndex + cardsPerView);
+    carousel.innerHTML = "";
+
+    visibleCards.forEach((card) => {
+      const cardElement = document.createElement("div");
+      cardElement.className = "service-card";
+      cardElement.innerHTML = `
+        <img src="${card.img}" alt="${card.title}" />
+        <h3>${card.title}</h3>
+        <p>${card.desc}</p>
+        <button>Start Now</button>
+      `;
+      carousel.appendChild(cardElement);
+    });
+  }
+
+  nextBtn.addEventListener("click", () => {
+    const cardsPerView = getCardsPerView();
+    if (startIndex + cardsPerView < cards.length) {
+      startIndex++;
+      renderCarousel();
+    }
+  });
+
+  prevBtn.addEventListener("click", () => {
+    if (startIndex > 0) {
+      startIndex--;
+      renderCarousel();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    const maxStartIndex = Math.max(0, cards.length - getCardsPerView());
+    if (startIndex > maxStartIndex) {
+      startIndex = maxStartIndex;
+    }
+    renderCarousel();
+  });
+
+  renderCarousel();
 });
