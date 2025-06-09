@@ -39,7 +39,9 @@ body {
   color: #dd9529;
 }
 
-.contacts svg {
+.contacts svg,
+.social-media-links svg,
+.footer-text svg {
   color: #dd9529;
 }
 
@@ -230,7 +232,9 @@ header hr {
 }
 
 .about-section,
-.courses-section {
+.courses-section,
+.testimonial-section,
+.team-section {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -278,16 +282,23 @@ header hr {
   display: flex;
   gap: 4px;
   align-items: center;
+  text-align: center;
   background-color: #021122;
   color: #dd9529;
   font-size: 20px;
   font-weight: 600px;
   width: fit-content;
   height: fit-content;
-  padding: 12px 16px;
+  padding: 8px 12px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
+}
+
+.learn-more svg {
+  padding-top: 4px;
+  width: 40px;
+  height: 40px;
 }
 
 .courses-section {
@@ -336,6 +347,471 @@ header hr {
   font-size: 36px;
   font-weight: 600;
   color: #021122;
+}
+
+.service-section,
+.features-section,
+.brand-section,
+.cantact-section,
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+  align-items: center;
+  height: fit-content;
+  width: 100%;
+  max-width: 100vw;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background-color: #021122;
+  padding: 48px 96px;
+}
+
+.devide h2 {
+  font-size: 48px;
+  font-weight: bolder;
+  color: #dd9529;
+  margin: 0px;
+}
+
+.devide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.devide hr {
+  width: 96px;
+  height: 4px;
+  border: none;
+  background: #dd9529;
+}
+
+.service-section h3 {
+  font-size: 40px;
+  font-weight: bolder;
+  color: #fff;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin: 0px 32px;
+}
+
+.cards-container {
+  display: flex;
+  gap: 24px;
+  padding: 0px 32px;
+  overflow: hidden;
+}
+
+.container svg {
+  width: 48px;
+  height: 48px;
+  background-color: #dd9529;
+  border: none;
+  border-radius: 50%;
+  z-index: 1000;
+}
+
+.left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 100;
+}
+.right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 100;
+}
+
+#carousel {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  flex: 0 0 calc(100% / 3 - 16px);
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: fit-content;
+  border: solid #fff 2px;
+  border-top: none;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  padding-bottom: 32px;
+}
+
+.service-card img {
+  width: 100%;
+  height: 200px;
+}
+
+.service-card h3 {
+  font-size: 20px;
+  color: #dd9529;
+}
+
+.service-card p {
+  width: 95%;
+  color: white;
+  text-align: center;
+}
+
+.service-card button {
+  color: #dd9529;
+  border: solid #dd9529 2px;
+  border-radius: 8px;
+  background-color: transparent;
+  padding: 12px 24px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.features-section {
+  flex-direction: row;
+  gap: 48px;
+}
+
+.features-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 8px;
+}
+
+.features-content h3 {
+  font-size: 36px;
+  font-weight: bolder;
+  color: #fff;
+}
+
+.feature {
+  display: flex;
+  gap: 42px;
+  background-color: #fff;
+  padding: 24px;
+  width: 100%;
+  border-radius: 24px;
+}
+
+.feature p {
+  font-size: 24px;
+}
+
+.feature svg {
+  width: 48px;
+  height: 48px;
+}
+
+.features-content .learn-more {
+  background-color: #1f2937;
+  border: solid #dd9529 2px;
+}
+
+.features-image {
+  padding: 24px;
+}
+
+.features-image img {
+  width: 425px;
+  height: 530px;
+}
+
+.testimonial-section,
+.team-section {
+  padding: 64px 96px;
+  gap: 72px;
+}
+
+.testimonial-section .devide .longer {
+  width: 150px;
+}
+
+.testimonial-container {
+  display: flex;
+  gap: 40px;
+}
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+.user-profile {
+  display: flex;
+  padding: 24px 4px;
+  align-items: center;
+  background-color: #fff;
+  gap: 24px;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.profile h3 {
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+.profile h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.user-profile img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+}
+
+.user-quotes {
+  background-color: #021122;
+  padding: 24px 4px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.user-quotes p {
+  margin: 4px 12px;
+  text-align: center;
+  color: #dd9529;
+}
+
+.brand-section {
+  padding: 110px 96px;
+}
+.brand-container {
+  width: 100%;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  align-items: center;
+}
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 16px 64px;
+  border-radius: 8px;
+  color: #dd9529;
+  font-size: 34px;
+  font-weight: bolder;
+}
+
+.team-section h2 {
+  font-size: 48px;
+  font-weight: bolder;
+}
+.team-container {
+  display: flex;
+  gap: 32px;
+  width: 96%;
+}
+.team-card {
+  position: relative;
+  width: 30%;
+  height: fit-content;
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-top: solid #021122 4px;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+  padding: 48px;
+  margin-top: 64px;
+}
+.image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  padding: 0px;
+  width: 140px;
+  height: 140px;
+  border: solid #021122 6px;
+  border-radius: 50%;
+}
+
+.image img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+}
+
+.team-card h3 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.team-card p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.cantact-section {
+  margin-bottom: 1px;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 16px 32px;
+}
+
+.message-container h2 {
+  text-align: center;
+  font-size: 48px;
+  font-weight: bolder;
+  color: #021122;
+}
+
+.inputes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 32px;
+  row-gap: 28px;
+}
+
+.inputes input {
+  width: 100%;
+  padding: 8px 4px;
+}
+
+.text-area {
+  width: 100%;
+  height: 160px;
+  text-align: start;
+  border-radius: 4px;
+}
+
+input {
+  font-size: 20px;
+  font-weight: 500;
+  color: gray;
+}
+
+.message-container button {
+  width: fit-content;
+  height: fit-content;
+  padding: 16px;
+  border-radius: 8px;
+  border: solid #dd9529 3px;
+  background-color: #021122;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.footer-container {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  gap: 48px;
+}
+.footer-about {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: start;
+  width: 300px;
+}
+.footer-logo {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: start;
+}
+
+.footer-logo img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+.footer-logo h3 {
+  font-size: 36px;
+  font-weight: bolder;
+  color: #fff;
+}
+
+.footer-about p {
+  color: gray;
+}
+
+.footer-about p span {
+  font-weight: 600;
+  color: #fff;
+}
+
+.footer-elements {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  justify-content: start;
+  align-items: start;
+}
+.footer-heading {
+  font-size: 36px;
+  font-weight: bolder;
+  color: #dd9529;
+}
+
+.footer-text {
+  display: flex;
+  gap: 16px;
+  font-size: 20px;
+  font-weight: bolder;
+  color: gray;
+}
+
+footer hr {
+  width: 100%;
+  height: 2px;
+  border: none;
+  background-color: #f3f4f6;
+}
+
+footer p {
+  font-size: normal;
+  font-weight: lighter;
+  color: gray;
 }
 
 @media (max-width: 780px) {
@@ -447,6 +923,96 @@ header hr {
   .courses-card img {
     width: 230px;
   }
+
+  .service-card {
+    flex: 0 0 100%;
+  }
+
+  .features-section {
+    flex-direction: column;
+    gap: 24px;
+    padding: 48px 24px;
+  }
+
+  .features-image {
+    width: 95%;
+  }
+
+  .features-image img {
+    width: 90%;
+  }
+
+  .testimonial-container {
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .testimonial-section .devide h2 {
+    font-size: 40px;
+  }
+
+  .brand-section {
+    padding: 48px 24px;
+  }
+
+  .brand-container {
+    flex-direction: column;
+  }
+
+  .cards {
+    padding: 8px 32px;
+    font-size: 24px;
+    font-weight: bolder;
+  }
+
+  .team-section {
+    padding: 48px 24px;
+  }
+
+  .team-section h2 {
+    font-size: 40px;
+  }
+  .team-container {
+    width: 100%;
+    gap: 16px;
+  }
+  .team-card {
+    width: 32%;
+    gap: 8px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    padding: 48px 12px;
+    margin-top: 32px;
+  }
+  .image {
+    width: 96px;
+    height: 96px;
+  }
+  .image img {
+    width: 86px;
+    height: 86px;
+  }
+  .team-card h3 {
+    font-size: 24px;
+  }
+  .team-card p {
+    font-size: 18px;
+  }
+
+  footer {
+    padding: 24px;
+  }
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 48px;
+    row-gap: 48px;
+  }
+
+  .footer-elements hr {
+    display: none;
+  }
 }
 
 @media (max-width: 435px) {
@@ -475,5 +1041,100 @@ header hr {
 
   .courses-card img {
     width: 180px;
+  }
+
+  .service-section h2 {
+    font-size: 32px;
+  }
+
+  .service-section h3 {
+    font-size: 14px;
+  }
+
+  .features-section {
+    justify-content: center;
+    padding: 48px 12px;
+  }
+
+  .features-content h3 {
+    text-align: center;
+  }
+
+  .features svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .features p {
+    font-size: 16px;
+  }
+
+  .features-image {
+    width: 100%;
+  }
+
+  .features-image img {
+    width: 100%;
+    height: 390px;
+  }
+
+  .testimonial-card {
+    width: 400px;
+  }
+
+  .team-container {
+    flex-direction: column;
+    width: 100%;
+    gap: 48px;
+  }
+  .team-card {
+    width: 90%;
+    gap: 16px;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+    padding: 48px 48px;
+    margin-top: 64px;
+  }
+  .image {
+    width: 160px;
+    height: 160px;
+  }
+  .image img {
+    width: 150px;
+    height: 150px;
+  }
+  .team-card h3 {
+    font-size: 32px;
+  }
+  .team-card p {
+    font-size: 24px;
+  }
+
+  .cantact-section {
+    padding: 24px;
+  }
+
+  .message-container {
+    width: 100%;
+  }
+
+  .message-container h2 {
+    font-size: 28px;
+  }
+
+  .inputes {
+    width: 100%;
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+
+  .text-area {
+    height: 100px;
+  }
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 48px;
   }
 }
