@@ -105,10 +105,15 @@ header hr {
 .navigations ul li {
   cursor: pointer;
   list-style: none;
-  color: white;
   font-size: 16px;
 }
-.navigations ul li:hover {
+
+.navigations ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.navigations ul li a:hover {
   color: #dd9529;
 }
 
@@ -235,7 +240,8 @@ header hr {
 .courses-section,
 .testimonial-section,
 .team-section,
-.faqs {
+.faqs,
+.chatbot-section {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -678,6 +684,74 @@ footer {
   font-weight: 500;
 }
 
+.chat-wrapper {
+  width: 50%;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.chat-header {
+  background: #061c38;
+  color: #f9b233;
+  text-align: center;
+  font-weight: bold;
+  padding: 15px;
+  font-size: 1.5rem;
+}
+
+.chat-box {
+  padding: 15px;
+  height: 350px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.chat {
+  line-height: 1.4;
+}
+
+.chat.ai {
+  color: #222;
+}
+
+.chat.user {
+  text-align: right;
+}
+
+.chat-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background: #f9f9f9;
+  border-radius: 0 0 20px 20px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.chat-input button {
+  margin-left: 10px;
+  color: #021122;
+  background-color: #fff;
+  font-size: 1.2rem;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.flag {
+  margin-right: 4px;
+}
+
 .faqs {
   gap: 24px;
   width: 80%;
@@ -1078,6 +1152,10 @@ footer p {
     font-size: 18px;
   }
 
+  .chat-wrapper {
+    width: 100%;
+  }
+
   footer {
     padding: 24px;
   }
@@ -1187,6 +1265,10 @@ footer p {
   }
   .team-card p {
     font-size: 24px;
+  }
+
+  .chatbot-section {
+    padding: 24px;
   }
 
   .faqs {
