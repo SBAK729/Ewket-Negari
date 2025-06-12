@@ -72,9 +72,9 @@ document.addEventListener("DOMContentLoaded", function () {
   let startIndex = 0;
 
   function getCardsPerView() {
-    return window.innerWidth >= 992 ? 3 : 1;
+    return window.innerWidth >= 780 ? 3 : 1;
   }
-
+  //displaying carousel
   function renderCarousel() {
     const cardsPerView = getCardsPerView();
     const visibleCards = cards.slice(startIndex, startIndex + cardsPerView);
@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  //Adding event listener for next and previous button
   nextBtn.addEventListener("click", () => {
     const cardsPerView = getCardsPerView();
     if (startIndex + cardsPerView < cards.length) {
@@ -164,12 +165,70 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Implementing the chatbot
+
+  // Get DOM elements
   const chatBox = document.getElementById("chat-box");
   const userInput = document.getElementById("user-input");
-  const sendBtn = document.getElementById("send-btn");
+  const sendButton = document.getElementById("send-btn");
 
-  // Hardcoded context for the chatbot
-  const contextPrompt = `
+  // State variables
+  let isProcessing = false;
+  let isAuthenticated = false;
+
+  // Initialize chat when page loads
+  initChat();
+
+  // Add event listeners
+  sendButton.addEventListener("click", handleSendMessage);
+  userInput.addEventListener("keypress", function (e) {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      handleSendMessage();
+    }
+  });
+
+  // Initialize chat - check auth
+  async function initChat() {
+    try {
+      // Check if user is signed in
+      isAuthenticated = puter.auth.isSignedIn();
+
+      if (isAuthenticated) {
+        console.log("User is authenticated, loading chat history...");
+      } else {
+        console.log(
+          "User not signed in yet. Will authenticate on first message."
+        );
+      }
+    } catch (error) {
+      console.error("Error initializing chat:", error);
+    }
+  }
+
+  // Handle sending a message
+  async function handleSendMessage() {
+    const message = userInput.value.trim();
+
+    if (!message || isProcessing) {
+      return;
+    }
+
+    isProcessing = true;
+
+    userInput.value = "";
+
+    appendMessage("user", message);
+
+    try {
+      // Ensure user is authenticated
+      if (!isAuthenticated) {
+        console.log("Authenticating user...");
+        await puter.auth.signIn();
+        isAuthenticated = true;
+      }
+
+      // Prepare the conversation context
+      const contextPrompt = `
 You are Ewket Negari’s helpful AI assistant.
 Ewket Negari is a startup founded to make education more accessible and personalized in Ethiopia.
 We provide digital courses, training programs, and a platform that connects learners with expert educators.
@@ -192,7 +251,30 @@ You can support us by:
 Be friendly, clear, and helpful in your answers. Respond to greetings like "hello", and explain who you are if someone asks "who are you?" or similar.
 `;
 
-  // Append message to chat box
+      // Build messages array for AI
+      const messages = [
+        { role: "system", content: contextPrompt },
+        { role: "user", content: message },
+      ];
+
+      // Get AI response
+      const response = await puter.ai.chat(messages);
+
+      // Add AI response to chat
+      appendMessage("ai", response);
+    } catch (error) {
+      console.error("Error getting AI response:", error);
+
+      // Show error message
+      appendMessage("ai", "Sorry, I encountered an error. Please try again.");
+    } finally {
+      // Reset processing state and re-enable input
+      isProcessing = false;
+      userInput.focus();
+    }
+  }
+
+  // Append a message to the chat box
   function appendMessage(sender, message) {
     const div = document.createElement("div");
     div.className = "chat " + sender;
@@ -203,45 +285,6 @@ Be friendly, clear, and helpful in your answers. Respond to greetings like "hell
     chatBox.appendChild(div);
     chatBox.scrollTop = chatBox.scrollHeight;
   }
-
-  // Main send handler
-  sendBtn.addEventListener("click", async () => {
-    const msg = userInput.value.trim();
-    if (!msg) {
-      alert("Please enter a question.");
-      return;
-    }
-
-    appendMessage("user", msg);
-    userInput.value = "";
-
-    try {
-      const fullPrompt = `${contextPrompt}\n\nUser: ${msg}\nAI:`;
-
-      const response = await puter.ai.chat({
-        prompt: fullPrompt,
-      });
-
-      if (response && response.choices && response.choices.length > 0) {
-        const aiReply =
-          response.choices[0].text ||
-          response.choices[0].message?.content ||
-          "No response.";
-        appendMessage("ai", aiReply.trim());
-      } else {
-        appendMessage("ai", " No response from the AI.");
-        console.warn(response);
-      }
-    } catch (err) {
-      appendMessage("ai", " Error reaching the AI. Please try again later.");
-      console.error(err);
-    }
-  });
-
-  // Pressing Enter sends the message
-  userInput.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") sendBtn.click();
-  });
 
   // Implement how many times the site visited
   let count = localStorage.getItem("visitCount");

@@ -716,10 +716,12 @@ footer {
 
 .chat.ai {
   color: #222;
+  width: 80%;
 }
 
 .chat.user {
   text-align: right;
+  margin-left: 80px;
 }
 
 .chat-input {
